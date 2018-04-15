@@ -480,14 +480,15 @@ figure.highlight {
       content: '>';
       position: absolute; }
 
-.category-title,
-.tag-title {
-  padding: 3rem 0 0;
-  margin-bottom: -2rem;
-  text-transform: uppercase; }
-  .category-title h5 > svg,
-  .tag-title h5 > svg {
-    margin-right: 0.5rem; }
+.section-heading {
+  padding-bottom: 0; }
+  .section-heading h5 {
+    margin-bottom: 0;
+    text-transform: uppercase; }
+    .section-heading h5 > svg {
+      margin-right: 0.5rem; }
+  .section-heading + .section {
+    padding-top: 2rem; }
 
 .gallery-item {
   position: relative;
