@@ -16,8 +16,8 @@ a.tag.article-tag {
 
 @media screen and (min-width: 1024px) {
     .container {
-        max-width: 800px;
-        width: 800px;
+        max-width: 960px;
+        width: 960px;
     }
 
     .navbar.is-transparent .navbar-dropdown a.navbar-item:hover {
@@ -43,6 +43,33 @@ a.tag.article-tag {
     }
 }
 
+        //==== by flyhero =====
+.article-left {
+    float: left;
+    width: 70%;
+}
+
+.author-right {
+    float: left;
+    width: 30%;
+}
+@media screen and (max-width: 960px) { 
+    .author-right {
+        display: none;
+    }
+    .article-left {
+            width: 100%;
+    }
+} 
+
+.toc-child {
+    margin-left: 2em;
+}
+
+.author-right  ol {
+    list-style:none;  
+}
+        //========end==========
 .article {
     & + .article {
         padding-top: 2rem;
@@ -84,9 +111,6 @@ a.tag.article-tag {
 
     .article-entry {
         margin-bottom: 0.3rem;
-        //==== by flyhero =====
-        width: 80%;
-        //========end==========
         h1, h2, h3, h4, h5, h6 {
             cursor: pointer;
             position: relative;
