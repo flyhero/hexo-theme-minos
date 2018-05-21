@@ -73,11 +73,20 @@ a.tag.article-tag {
 
         .article-category-link {
             margin: 0 0.3rem;
+            //==== by flyhero =====
+            padding: 2px 6px;
+            color: #ea6f5a !important;
+            border: 1px solid rgba(236, 97, 73, .7);
+            border-radius: 3px;
+            //========end==========
         }
     }
 
     .article-entry {
-        margin-bottom: 3rem;
+        margin-bottom: 0.3rem;
+        //==== by flyhero =====
+        width: 80%;
+        //========end==========
         h1, h2, h3, h4, h5, h6 {
             cursor: pointer;
             position: relative;
@@ -89,7 +98,17 @@ a.tag.article-tag {
             }
         }
     }
-
+     //==== by flyhero =====
+    .wrap-img {
+        position: absolute;
+        margin-top: -87px;
+        right: 0;
+        width: 20%;
+        height: 125px;
+        border-radius: 4px;
+        border: 1px solid #f0f0f0;
+    }
+    //========end==========
     .article-more-link a {
         font-size: .9rem;
         color: darkgray;
