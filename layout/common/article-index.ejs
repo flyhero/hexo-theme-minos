@@ -9,7 +9,7 @@
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
                 <% if (post.author){ %>
                     <span class="column is-narrow">
-                        <i class="far fa-user"></i>
+                        <i class="fa fa-user"></i>
                         <%= post.author %>
                     </span>
                     <% } %>
@@ -45,11 +45,10 @@
             <a href="<%- url_for(post.path) %>#more"><%= __('article.read_more') %></a>
         </p>
     <% } else { %>
-        <%- toc(page.content) %>
         <%- post.content %>
     <% } %>
     </div>
-    <% if (!index && post.tags && post.tags.length){ %>
+    <!-- <% if (!index && post.tags && post.tags.length){ %>
     <div class="columns is-variable is-1 is-multiline is-mobile">
     <% (post._tags || post.tags).forEach(tag => { %>
         <span class="column is-narrow"><a class="tag is-light article-tag" href="<%- url_for(tag.path) %>">#<%= tag.name %></a></span>
@@ -69,18 +68,5 @@
             <% } %>
         </span>
     </div>
-    <% } %>
+    <% } %> -->
 </article>
-
-<!-- <% if (!index && has_config('share.type')) { %>
-<div class="sharebox">
-    <%- partial('share/' + get_config('share.type')) %>
-</div>
-<% } %>
-
-<% if (!index && has_config('comment.type')) { %>
-<div class="comments">
-    <h3 class="title is-4"><%= __('article.comments') %></h3>
-    <%- partial('comment/' + get_config('comment.type')) %>
-</div>
-<% } %> -->
