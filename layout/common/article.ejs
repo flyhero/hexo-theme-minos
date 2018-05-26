@@ -10,9 +10,14 @@
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
                 <% if (post.author){ %>
                     <span class="column is-narrow">
-                        <i class="far fa-user"></i>
+                        <i class="fa fa-user"></i>
                         <%= post.author %>
                     </span>
+                    <% } %>
+
+           
+                    <% if(has_config('leancloud_visitors.enable')){ %>阅读数:
+                        <span id="<%= url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%- post.title %>"></span>次
                     <% } %>
 
         <span class="column is-narrow">

@@ -104,6 +104,14 @@ hexo.extend.helper.register('word_count', (content) => {
 });
 
 /**
+ * Get the abstract of a post.
+ */
+hexo.extend.helper.register('abstract_post', (content1) => {
+    content1 = content1.substr(0,200);
+    return content1;
+});
+
+/**
  * Export a list of headings of an article
  * [
  *     ['1', 'heading-anchor-1', 'Title of the heading 1'],

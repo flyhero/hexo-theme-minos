@@ -6,6 +6,17 @@
                 Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
                         href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
             </div>
+            
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">
+        总访问量
+        <span id="busuanzi_value_site_pv"></span>次
+    </span>
+    <span id="busuanzi_container_site_uv">
+        访客数
+        <span id="busuanzi_value_site_uv"></span>人次
+    </span>
+       
             <div class="column is-hidden-mobile"></div>
 
             <% if (has_config('footer_links')) { %>
@@ -28,3 +39,39 @@
         </div>
     </div>
 </footer>
+
+<% if (has_config('leancloud_visitors.enable')) { %>
+    <script>
+        // 显示次数
+        function showTime(Counter) {
+            var query = new AV.Query("Counter");
+            if ($(".leancloud_visitors").length > 0) {
+                var url = $(".leancloud_visitors").attr('id').trim();
+                // where field
+                query.equalTo("words", url);
+                // count 
+                query.count().then(function (number) {
+                    // There are number instances of MyClass where words equals url.
+                    $(document.getElementById(url)).text(number ? number : '--');
+                }, function (error) {
+                    // error is an instance of AVError.
+                });
+            }
+        }
+        // 追加pv
+        function addCount(Counter) {
+            var url = $(".leancloud_visitors").length > 0 ? $(".leancloud_visitors").attr('id').trim() : 'icafebolger.com';
+            var Counter = AV.Object.extend("Counter");
+            var query = new Counter;
+            query.save({
+                words: url
+            }).then(function (object) {
+            })
+        }
+        $(function () {
+            var Counter = AV.Object.extend("Counter");
+            addCount(Counter);
+            showTime(Counter);
+        });
+    </script>
+    <% } %>

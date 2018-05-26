@@ -43,7 +43,7 @@ a.tag.article-tag {
     }
 }
 
-        //==== by flyhero =====
+//============== by flyhero ===================
 .article-left {
     float: left;
     width: 70%;
@@ -69,16 +69,6 @@ a.tag.article-tag {
 .author-right  ol {
     list-style:none;  
 }
-// .short-about{
-//     text-align: center;
-// }
-// .short-about img {
-//     width: 80%;
-//     display: block;
-//     border-radius: 50%;
-//     margin: auto;
-//     box-shadow: 0 0 2px black;
-// }
 
 .list-inline {
     padding-left: 0;
@@ -97,7 +87,55 @@ a.tag.article-tag {
     position: fixed;
     margin-left: 35px;
 }
-        //========end==========
+.right-section {
+    padding: 0 18px;
+    margin-left: 10%;
+}
+.right-section > fieldset {
+    border: 1px solid rgb(255, 153, 0); 
+    text-align: center; 
+    border-radius: 8px; 
+    font-size: 1.5em;
+}
+.right-section > fieldset > hr {
+    margin: 16px; 
+    border-top-width: 1px; 
+    border-top-style: solid; 
+    border-color: rgb(255,153,0);
+}
+
+.right-desc {
+    line-height: 1.4; 
+    font-size: 0.7em;
+}
+.wx-img {
+    border: 3px solid rgb(255, 153, 0); 
+    border-radius: 10px; 
+    width: 144px; 
+    height: 144px;
+}
+.avatar-section {
+    width: 5em; 
+    height: 5em; 
+    margin-top: 0.5em; 
+    margin-right: auto; 
+    margin-left: auto; 
+    border:2px solid rgb(255,153,0); 
+    border-radius:50%
+}
+.avatar-section > img {
+    border-radius: 50%; 
+    box-sizing: border-box; 
+    width: 114px; 
+    height: 114px;
+}
+        .article-category-span {
+            padding: 2px 6px;
+            color: #ea6f5a !important;
+            border: 1px solid rgba(236, 97, 73, .7);
+            border-radius: 3px;
+        }
+//==============end=================
 .article {
     & + .article {
         padding-top: 2rem;
