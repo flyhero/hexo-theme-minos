@@ -3,40 +3,49 @@
         <div class="columns content">
             <div class="column is-narrow has-text-centered">
                 &copy; 2016 - <%= date(new Date(), 'YYYY') %> <%= get_config('author') || get_config('title') %>&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+                <a href="http://www.miitbeian.gov.cn/">皖ICP备18004846号</a>
             </div>
             
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span id="busuanzi_container_site_pv">
-        总访问量
-        <span id="busuanzi_value_site_pv"></span>次
-    </span>
-    <span id="busuanzi_container_site_uv">
-        访客数
-        <span id="busuanzi_value_site_uv"></span>人次
-    </span>
-       
             <div class="column is-hidden-mobile"></div>
+        </div>
 
-            <% if (has_config('footer_links')) { %>
+    <div class="columns">
+        <div class="column is-narrow has-text-centered">
+                            <span id="busuanzi_container_site_pv">
+                                <i class="fa fa-eye"></i>
+                                <span id="busuanzi_value_site_pv"></span>次
+                            </span>
+                            <span id="busuanzi_container_site_uv">
+                                <i class="fa fa-user"></i>
+                                <span id="busuanzi_value_site_uv"></span>人次
+                            </span>
+                    &nbsp;Powered by
+                    <a href="http://hexo.io/" target="_blank">Hexo</a> &
+                    <a href="http://github.com/ppoffice/hexo-theme-minos">Minos</a>
+        </div>
+    
+        <div class="column is-hidden-mobile"></div>
+    
+        <% if (has_config('footer_links')) { %>
             <div class="column is-narrow">
                 <div class="columns is-mobile is-multiline is-centered">
-                <% for (let name in get_config('footer_links')) { %>
-                    <% let link = get_config('footer_links')[name]; %>
-                <a class="column is-narrow has-text-black" href="<%= typeof(link) === 'string' ? link : link.url%>">
-                    <% if (typeof(link) === 'string') { %>
-                    <%= name %>
-                    <% } else { %>
-                    <i class="<%= link.icon %>"></i>
-                    <% } %>
-                </a>
-                <% } %>
+                    <% for (let name in get_config('footer_links')) { %>
+                        <% let link = get_config('footer_links')[name]; %>
+                            <a class="column is-narrow has-text-black" href="<%= typeof(link) === 'string' ? link : link.url%>">
+                                <% if (typeof(link) === 'string') { %>
+                                    <%= name %>
+                                        <% } else { %>
+                                            <i class="<%= link.icon %>"></i>
+                                            <% } %>
+                            </a>
+                            <% } %>
                 </div>
             </div>
             <% } %>
-            <%- partial('common/languages') %>
-        </div>
+                <%- partial('common/languages') %>
+    </div>
+
+
     </div>
 </footer>
 
