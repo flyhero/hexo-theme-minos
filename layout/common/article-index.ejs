@@ -14,7 +14,7 @@
                     </span>
                     <% } %>
         <span class="column is-narrow">
-            <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= from_now(post.date) %></time>
+            <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= zh_date(post.date) %></time>
         </span>
         <!-- <% if (post.categories && post.categories.length){ %>
         <span class="column is-narrow article-category">
@@ -38,18 +38,28 @@
         <!-- <p class="article-more-link">
             <a href="<%- url_for(post.path) %>#more"><%= __('article.read_more') %></a>
         </p> -->
-                <% if (post.categories && post.categories.length){ %>
+                
                     <div class="is-1 is-multiline is-mobile is-size-7-mobile">
+                        <% if (post.categories && post.categories.length){ %>
                     <span class="is-narrow article-category">
                         <!-- <i class="far fa-folder"></i> -->
                         <%- (post._categories || post.categories).map(category =>
                                     `<a class="article-category-span" href="${url_for(category.path)}">${category.name}</a>`)
                                     .join('<span>></span>') %>
                     </span>
-                    </div>
                     <% } %>
+                    <% if(has_config('leancloud_visitors.enable')){ %>
+                        <span style="padding-left: 10px" class="is-narrow">
+                            <i class="fa fa-eye"></i>
+                            <span id="<%= url_for(post.path) %>" class="leancloud_visitors" data-title="<%- post.title %>">
+                            </span>
+                        </span>
+                        <% } %>
+
+                    </div>
+
+
     <% } else { %>
-        <!-- <%= abstract_post(post.content); %> -->
         <%- post.content %>
     <% } %>
     </div>

@@ -16,8 +16,10 @@
                     <% } %>
 
            
-                    <% if(has_config('leancloud_visitors.enable')){ %>阅读数:
-                        <span id="<%= url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%- post.title %>"></span>次
+                    <% if(has_config('leancloud_visitors.enable')){ %>
+                        <span id="<%= url_for(post.path) %>" class="leancloud_visitors column is-narrow" data-title="<%- post.title %>">
+                            <i class="fa fa-eye"></i>
+                        </span>
                     <% } %>
 
         <span class="column is-narrow">

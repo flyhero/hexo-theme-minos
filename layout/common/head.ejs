@@ -34,8 +34,5 @@
 <% } %>
 
 <%- css('css/style') %>
-<% if (has_config('leancloud_visitors.enable')) { %>
-    <script src="//cdn1.lncld.net/static/js/3.6.8/av-min.js"></script>
-    <script>AV.initialize("<%- get_config('leancloud_visitors.app_id') %>", "<%- get_config('leancloud_visitors.app_key') %>");</script>
-<% } %>
+
 <!-- <script defer src="//use.fontawesome.com/releases/v5.0.13/js/all.js"></script> -->

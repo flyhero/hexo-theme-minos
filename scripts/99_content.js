@@ -81,6 +81,13 @@ hexo.extend.helper.register('format_date', injectMomentLocale(function(date) {
 }));
 
 /**
+ * Format date to zh date.
+ */
+hexo.extend.helper.register('zh_date', injectMomentLocale(function (date) {
+    return moment(date).format('LLL');
+}));
+
+/**
  * Export moment.duration
  */
 hexo.extend.helper.register('duration', injectMomentLocale(function() {
@@ -101,14 +108,6 @@ hexo.extend.helper.register('word_count', (content) => {
     content = content.replace(/<\/?[a-z][^>]*>/gi, '');
     content = content.trim();
     return content ? (content.match(/[\u00ff-\uffff]|[a-zA-Z]+/g) || []).length : 0;
-});
-
-/**
- * Get the abstract of a post.
- */
-hexo.extend.helper.register('abstract_post', (content1) => {
-    content1 = content1.substr(0,200);
-    return content1;
 });
 
 /**
