@@ -14,10 +14,11 @@
 <script>AV.initialize("<%- get_config('leancloud_visitors.app_id') %>", "<%- get_config('leancloud_visitors.app_key') %>");</script>
 <script>
     function showTime(Counter) {
-        var query = new AV.Query(Counter);
+        
         document.querySelectorAll(".leancloud_visitors").forEach(function (item) {
             console.log(item.id);
             var url = item.id.trim();
+            var query = new AV.Query(Counter);
             query.equalTo("url", url);
             query.find().then(function (results) {
                     if (results.length == 0) {
@@ -45,14 +46,12 @@
                     var counter = results[0];
                     counter.fetchWhenSave(true);
                     counter.increment("hits");
-                    counter.save(null, {
-                        success: function (counter) {
+                    counter.save().then(function (counter) {
                             document.getElementById(url).innerHTML = counter.get('hits');
-                        },
-                        error: function (counter, error) {
+                        },function (counter, error) {
                             console.log('Failed to save Visitor num, with error message: ' + error.message);
                         }
-                    });
+                    );
                 } else {
                     var newcounter = new Counter();
                     newcounter.set("title", title);
@@ -70,40 +69,6 @@
                 console.log('Error:' + error.code + " " + error.message);
             }
         );
-/*         query.find({
-            success: function (results) {
-                if (results.length > 0) {
-                    var counter = results[0];
-                    counter.fetchWhenSave(true);
-                    counter.increment("hits");
-                    counter.save(null, {
-                        success: function (counter) {
-                            document.getElementById(url).innerHTML = counter.get('hits');
-                        },
-                        error: function (counter, error) {
-                            console.log('Failed to save Visitor num, with error message: ' + error.message);
-                        }
-                    });
-                } else {
-                    var newcounter = new Counter();
-                    newcounter.set("title", title);
-                    newcounter.set("url", url);
-                    newcounter.set("hits", 1);
-                    newcounter.save(null, {
-                        success: function (newcounter) {
-                            console.log("newcounter.get('hits')=" + newcounter.get('hits'));
-                            document.getElementById(url).innerHTML = newcounter.get('hits');
-                        },
-                        error: function (newcounter, error) {
-                            console.log('Failed to create');
-                        }
-                    });
-                }
-            },
-            error: function (error) {
-                console.log('Error:' + error.code + " " + error.message);
-            }
-        }); */
     }
     (function () {
         var Counter = AV.Object.extend("Counter");

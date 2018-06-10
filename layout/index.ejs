@@ -1,63 +1,61 @@
 <section class="section" style="overflow: hidden;">
     <div class="container">
         <div class="article-left">
-    <% page.posts.each(function(post){ %>
-        <%- partial('common/article-index', { post, index: true }) %>
-    <% }); %>
-    <% if (page.total > 1) { %>
-        <%- partial('common/paginator') %>
-    <% } %>
-    </div>
-    <div class="author-right">
+            <% page.posts.each(function(post){ %>
+                <%- partial('common/article-index', { post, index: true }) %>
+                    <% }); %>
+                        <% if (page.total > 1) { %>
+                            <%- partial('common/paginator') %>
+                                <% } %>
+        </div>
+        <div class="author-right">
 
-<section class="right-section">
-<fieldset>
-    <section class="avatar-section">
-        <img src="http://ww2.sinaimg.cn/large/7de0c4f0jw1f7wldvvdkyj2040040weh.jpg">
-    </section>
-    <div  style="margin: 8px 8px 3px; line-height: 1.4;">
-            <span>flyhero</span>
-    </div>
-    <div class="right-desc">
-            <span>前路慢慢，稳打稳扎</span>
-    </div>
-    <hr></hr>
-    <!-- <div class="right-desc">
+            <section class="right-section">
+                <fieldset>
+                    <section class="avatar-section">
+                        <img src="http://7xv6ov.com2.z0.glb.qiniucdn.com/flyhero.png">
+                    </section>
+                    <div style="margin: 8px 8px 3px; line-height: 1.4;">
+                        <span>flyhero</span>
+                    </div>
+                    <div class="right-desc">
+                        <span>前路慢慢，稳打稳扎</span>
+                    </div>
+                    <hr></hr>
+                    <!-- <div class="right-desc">
             <span>微信号：xwintop</span>
     </div>
     <img class="wx-img" src=""> -->
-    <ul class="list-inline">
-    
-        <li>
-            <a target="_blank" href="#">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-stack-1x fa-inverse">知</i>
-                </span>
-            </a>
-        </li>
-        <li>
-            <a target="_blank" href="#">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-stack-1x fa-inverse">简</i>
-                </span>
-            </a>
-        </li>
-        <li>
-            <a target="_blank" href="https://github.com/flyhero">
-                <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                </span>
-            </a>
-        </li>
-    </ul>
-</fieldset>
-</section>
+                    <ul class="list-inline">
 
+                        <li>
+                            <a target="_blank" href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-stack-1x fa-inverse">知</i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="#">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-stack-1x fa-inverse">简</i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://github.com/flyhero">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </fieldset>
+            </section>
+
+        </div>
     </div>
-    </div>
 </section>
-
-

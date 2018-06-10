@@ -54,6 +54,15 @@ blog experience, or build your own plugin easily referring to the existing Minos
         <td><a href="https://www.mathjax.org/">MathJax</a></td>
     </tr>
 </table>
+<table>
+    <tr>
+        <th colspan="3">统计插件</th>
+    </tr>
+    <tr>
+        <td><a href="http://service.ibruce.info/">不蒜子</a></td>
+        <td><a href="https://leancloud.cn/">leancloud</a></td>
+    </tr>
+</table>
 
 **Rich Code Highlight Theme Choices**
 

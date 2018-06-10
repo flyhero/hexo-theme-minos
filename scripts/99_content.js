@@ -84,7 +84,7 @@ hexo.extend.helper.register('format_date', injectMomentLocale(function(date) {
  * Format date to zh date.
  */
 hexo.extend.helper.register('zh_date', injectMomentLocale(function (date) {
-    return moment(date).format('LLL');
+    return moment(date).format('YYYY-MM-DD HH:mm');
 }));
 
 /**
