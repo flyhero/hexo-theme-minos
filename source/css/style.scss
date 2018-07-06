@@ -1,5 +1,11 @@
-$family-serif: "Ovo", "Georgia", "STZhongsong", "Microsoft YaHei", serif;
-$family-mono: "Source Code Pro", monospace, "Microsoft YaHei";
+//$family-serif: "Ovo", "Georgia", "STZhongsong", "Microsoft YaHei", serif;
+ $family-serif: "Microsoft YaHei", "微软雅黑", Helvetica, Tahoma, STXihei, "华文细黑", STHeiti, "Helvetica Neue", Helvetica, Tahoma, "Droid Sans", "wenquanyi micro hei", FreeSans, Arimo, Arial, SimSun, "宋体", Heiti, "黑体", sans-serif;
+ //$family-serif: "YaHei Consolas Hybrid", Consolas, "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", Helvetica, monospace, monospace;
+ //$family-serif: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+$family-mono: "YaHei Consolas Hybrid", Consolas, "Meiryo UI", "Malgun Gothic", "Segoe UI", "Trebuchet MS", Helvetica, monospace, monospace;
+ 
+ //$family-mono: "Source Code Pro", monospace, "Microsoft YaHei";
+
 $border-color: #dbdbdb;
 
 @import "../../../../node_modules/highlight.js/styles/atom-one-light";
@@ -48,6 +54,34 @@ a.tag.article-tag {
     float: left;
     width: 70%;
 }
+
+
+
+    article > table {
+        width: 100%;
+        overflow: auto;
+    }
+
+    article > table > thead > tr > th {
+        font-weight: bold;
+        padding: 6px 13px;
+        border: 1px solid #ddd !important; 
+    }
+
+    article > table > tbody > tr > td {
+        padding: 6px 13px;
+        border: 1px solid #ddd !important; 
+    }
+
+    article > table > thead > tr {
+        background-color: #f8f8f8;
+        border-top: 1px solid #ccc;
+    }
+
+    article > table > tbody > tr:nth-child(2n) {
+        background-color: #f8f8f8;
+    }
+
 
 .author-right {
     float: left;
@@ -126,8 +160,8 @@ a.tag.article-tag {
 .avatar-section > img {
     border-radius: 50%; 
     box-sizing: border-box; 
-    width: 114px; 
-    height: 114px;
+    width: 120px; 
+    height: 120px;
 }
         .article-category-span {
             padding: 2px 6px;
@@ -137,6 +171,7 @@ a.tag.article-tag {
         }
 //==============end=================
 .article {
+
     & + .article {
         padding-top: 2rem;
         border-top: 1px solid $border-color;
@@ -553,6 +588,7 @@ figure.highlight {
     padding: 0;
     width: 100%;
     margin: 0 0 1.5rem;
+    border: 1px solid #ddd;
 
     @each $class in $hljs-classes {
         .#{$class} {
