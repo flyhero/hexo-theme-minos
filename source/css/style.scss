@@ -55,30 +55,32 @@ a.tag.article-tag {
     width: 70%;
 }
 
+.toc-fixed > h1 {
+    font-size: 25px;
+}
 
-
-    article > table {
+    .article-entry > table, .article > table {
         width: 100%;
         overflow: auto;
     }
 
-    article > table > thead > tr > th {
+    .article-entry > table > thead > tr > th, .article > table > thead > tr > th {
         font-weight: bold;
         padding: 6px 13px;
         border: 1px solid #ddd !important; 
     }
 
-    article > table > tbody > tr > td {
+    .article-entry > table > tbody > tr > td, .article > table > tbody > tr > td{
         padding: 6px 13px;
         border: 1px solid #ddd !important; 
     }
 
-    article > table > thead > tr {
+    .article-entry > table > thead > tr, .article > table > thead > tr {
         background-color: #f8f8f8;
         border-top: 1px solid #ccc;
     }
 
-    article > table > tbody > tr:nth-child(2n) {
+    .article-entry > table > tbody > tr:nth-child(2n), .article > table > tbody > tr:nth-child(2n) {
         background-color: #f8f8f8;
     }
 

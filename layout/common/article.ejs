@@ -25,8 +25,8 @@
                     </span>
 
                     <% if(has_config('leancloud_visitors.enable')){ %>
-                        <span class="column is-narrow">
-                            <i class="fa fa-eye"></i>
+                        <span hidden class="column is-narrow">
+                           <!--  <i class="fa fa-eye"></i> -->
                             <span id="<%= url_for(post.path) %>" class="leancloud_visitors" data-title="<%- post.title %>">
                             </span>
                         </span>

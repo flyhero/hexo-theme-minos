@@ -13,6 +13,16 @@
 
     $(window).scroll(function(event){
         didScroll = true;
+        console.log($(".comments").offset().top);
+        if ($(document).scrollTop() >= $(".comments").offset().top-$(window).height()) {
+            $(".toc-fixed").css({
+                display: 'none'
+            })
+        }else{
+            $(".toc-fixed").css({
+                display: 'block'
+            })
+        }
     });
 
     setInterval(function() {
