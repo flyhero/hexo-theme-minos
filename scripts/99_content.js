@@ -127,7 +127,6 @@ hexo.extend.helper.register('toc_list', (content) => {
         const level = +this.name[1];
         const id = $(this).attr('id');
         const text = _.escape($(this).text());
-
         levels[level - 1] += 1;
         for (let i = level; i < levels.length; i++) {
             levels[i] = 0;

@@ -11,10 +11,13 @@
         </h1>
         <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
             <% if (post.author){ %>
-                <span class="column is-narrow">
-                    <i class="fa fa-user"></i>
-                    <%= post.author %>
+                <span class="column is-narrow ">
+                    <span class="badge badge-pill badge-warning">转载</span>
                 </span>
+                <% } else { %>
+                    <span class="column is-narrow ">
+                        <span class="badge badge-pill badge-success">原创</span>
+                    </span>
                 <% } %>
 
                     <span class="column is-narrow">
@@ -25,7 +28,7 @@
                     </span>
 
                     <% if(has_config('leancloud_visitors.enable')){ %>
-                        <span hidden class="column is-narrow">
+                        <span style="display: none;" class="column is-narrow">
                            <!--  <i class="fa fa-eye"></i> -->
                             <span id="<%= url_for(post.path) %>" class="leancloud_visitors" data-title="<%- post.title %>">
                             </span>
@@ -59,7 +62,7 @@
                                     <% } %>
         </div>
         <% if (!index && post.tags && post.tags.length){ %>
-            <div class="columns is-variable is-1 is-multiline is-mobile">
+            <div class="columns is-variable is-1 is-multiline is-mobile" style="padding-top: 2em;">
                 <% (post._tags || post.tags).forEach(tag => { %>
                     <span class="column is-narrow">
                         <a class="tag is-light article-tag" href="<%- url_for(tag.path) %>">#
@@ -69,6 +72,7 @@
                     <% }) %>
             </div>
             <% } %>
+
     </article>
 
     <!-- <% if (!index && has_config('share.type')) { %>
@@ -83,7 +87,38 @@
     <%- partial('comment/' + get_config('comment.type')) %>
 </div>
 <% } %> -->
+<% if (!index && has_config('copyright')) { %>
 
+    <ul class="post-copyright">
+        <li class="post-copyright-author">
+            <strong>本文作者：</strong>
+            <% if (post.author){ %>
+                <%- post.author %>
+            <% } else { %>
+                <%- theme.author %>
+            <% } %>
+        </li>
+       
+        <li class="post-copyright-link">
+            <strong>本文链接：</strong>
+                        <% if (post.origin){ %>
+                            <a target="_blank" href="<%= url_for(post.origin) %>" title="<%= post.title %>">
+                                <%- post.origin %>
+                            </a>
+                        <% } else { %>
+                                <a target="_blank" href="<%= url_for(post.path) %>" title="<%= post.title %>">
+                                    <%- theme.url %>/<%= post.path %>
+                                </a>
+                        <% } %>
+            
+        </li>
+        <li class="post-copyright-license">
+            <strong>版权： </strong>
+            本站文章均采用
+            <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议，请勿用于商业，转载注明出处！
+        </li>
+    </ul>
+    <% } %>
 </div>
 
 <div class="author-right">
@@ -93,3 +128,19 @@
     </div>
 
 </div>
+
+<!-- 百度站长推送 -->
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>

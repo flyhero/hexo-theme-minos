@@ -9,12 +9,15 @@
                     <% } %>
     </h1>
     <div class="article-meta columns is-variable is-1 is-multiline is-mobile is-size-7-mobile">
-        <% if (post.author){ %>
-            <span class="column is-narrow">
-                <i class="fa fa-user"></i>
-                <%= post.author %>
-            </span>
-            <% } %>
+                <% if (post.author){ %>
+                    <span class="column is-narrow ">
+                        <span class="badge badge-pill badge-warning">转载</span>
+                    </span>
+                    <% } else { %>
+                        <span class="column is-narrow ">
+                            <span class="badge badge-pill badge-success">原创</span>
+                        </span>
+                        <% } %>
                 <span class="column is-narrow">
                     <i class="fa fa-calendar-o"></i>
                     <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished">
@@ -45,7 +48,7 @@
             <a href="<%- url_for(post.path) %>#more"><%= __('article.read_more') %></a>
         </p> -->
 
-                <div class="is-1 is-multiline is-mobile is-size-7-mobile">
+                <div class="is-1 is-multiline is-mobile is-size-7-mobile" style="font-size: 0.8rem">
                     <% if (post.categories && post.categories.length){ %>
                         <span class="is-narrow article-category">
                             <!-- <i class="far fa-folder"></i> -->
